@@ -112,13 +112,13 @@ export const deleteContact = (contactId: string): ThunkType => (dispatch: ThunkD
         });
 }
 
-export const updateContactTitle = (contactId: string, title: string): ThunkType => (dispatch: ThunkDispatchType, getState) => {
+export const updateContactTitle = (contactId: string, title: string): ThunkType => (dispatch: ThunkDispatchType) => {
     api.updateContactTitle(contactId, title)
         .then(res => {
             dispatch(changeContactsTitleAC(contactId, title));
         });
 }
-export const updateContactTel = (tel: string, contactId: string): ThunkType => (dispatch: ThunkDispatchType, getState) => {
+export const updateContactTel = (tel: string, contactId: string): ThunkType => (dispatch: ThunkDispatchType) => {
     api.updateContactTel(tel, contactId)
         .then(res => {
             dispatch(changeContactsTelAC(tel, contactId));
